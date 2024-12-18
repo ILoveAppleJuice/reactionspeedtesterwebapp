@@ -1,17 +1,26 @@
 from flask import Flask,render_template,redirect,request
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'secret!'
 
-
-app.route("/")
+@app.route("/")
 def index():
-    ...
+    print(request)
+    return render_template("index.html")
 
-app.route("/api/submit",methods=["POST"])
+@app.route("/test")
+def test():
+    return render_template("test.html")
+
+@app.route("/completed")
+def completed():
+    return render_template("completed.html")
+
+@app.route("/api/submit",methods=["POST"])
 def handleSubmitRequest():
     ...
 
-app.route("/api/data",methods=["GET"])
+@app.route("/api/data",methods=["GET"])
 def handleGetDataRequest():
     ...
 

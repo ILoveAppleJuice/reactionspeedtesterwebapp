@@ -1,0 +1,64 @@
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+#sportsOtherText {
+    visibility: hidden;
+}
+
+#other:checked ~ #sportsOtherText{
+    visibility:visible;
+    
+}
+
+#testBox{
+    margin-top: 50px;
+    background-color: rgb(99, 99, 99);
+    height: 600px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#text{
+}
+
+h3{
+    margin: 0;
+    font-size: 150%;
+    color: white;
+}
+
+#title{
+    margin: 0;
+    font-size: 500%;
+    margin-bottom: 10px;
+    color: white;
+}
+#colorSpan{
+    color: rgb(247, 0, 255);
+}
+
+
+
+table {
+    border-collapse: collapse;
+    width: 30%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+td, th {
+    border: 2px solid #00000077;
+    text-align: left;
+    padding: 8px;
+    font-size: 130%;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

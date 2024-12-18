@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>thing</title>
+
+    <link rel="stylesheet" href="../static/styles.css">
+    
+</head>
+
+<body>
+
+    <form id="form">
+        <div id="gradeInput">
+            <h4>Grade</h4>
+            <input type="radio" name="grade" value="9" id="9" >
+            <label for="9">9th grade</label><br>
+
+            <input type="radio" name="grade" value="10" id="10" required>
+            <label for="10">10th grade</label><br>
+
+            <input type="radio" name="grade" value="11" id="11">
+            <label for="11">11th grade</label><br>
+
+            <input type="radio" name="grade" value="12" id="12">
+            <label for="12">12th grade</label><br>
+        </div>
+
+        <br><hr>
+        
+        <div id="genderInput">
+            <h4>Gender</h4>
+            <input type="radio" name="gender" value="male" id="male" required>
+            <label for="male">Male</label><br>
+
+            <input type="radio" name="gender" value="female" id="female" >
+            <label for="female">Female</label><br>
+        </div>
+
+        <br><hr>
+
+        <div id="Sports">
+            <h4>Extracurricular Sports</h4>
+            <input type="checkbox" name="soccer"  id="soccer">
+            <label for="soccer">Soccer</label><br>
+
+            <input type="checkbox" name="swim" id="swim" >
+            <label for="swim">Swim</label><br>
+
+            <input type="checkbox" name="basketball" id="basketball">
+            <label for="basketball">Basketball</label><br>
+
+            <input type="checkbox" name="tennis" id="tennis" >
+            <label for="tennis">Tennis</label><br>
+
+            <input type="checkbox" name="baseball"  id="baseball" >
+            <label for="baseball">Baseball</label><br>
+            
+            
+            <input type="checkbox" id="other" >
+            <label for="other">Other</label><br>
+            <input type="text" name="sportsOther" id="sportsOtherText" placeholder="Please specify">
+            
+        </div>
+
+        <br>
+
+        <input formaction="/test" value="Continue" type="submit" id="submit">
+    </form>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <script src="../static/redirectCompleted.js"></script>
+</body>
+
+</html>
