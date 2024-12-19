@@ -1,5 +1,4 @@
-
-let completed = Cookies.get('completed')
-if (completed){
-    window.location.href = "/completed"
+let result = Cookies.get('result')
+if (result != undefined){
+    window.location.replace("/completed")
 }

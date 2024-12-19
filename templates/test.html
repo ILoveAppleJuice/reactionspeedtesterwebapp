@@ -14,37 +14,62 @@
     
 
     <div id="testBox">
-        <h1 id="title">Reaction Test</h1>
-        <div id="text">
-            <h3>When the grey box turns <span id="colorSpan">Red</span>, click as quickly as you can.</h3>
+        <button id="button">
+
+        </button>
+        
+        <div id="PreText">
+            <h1 class="title">Reaction Test</h1>
+            <h3>When the grey box turns <span class="colorSpan"></span>, click as quickly as you can.</h3>
             <h3>Click anywhere to start</h4>
+        </div>
+
+        <div id="DuringText">
+            <h1 class="title">...</h1>
+            <h1 style="font-size: 250%;">Wait for <span class="colorSpan">color</span></h1>
+        </div>
+
+        <div id="PromptText">
+            <h1 class="title">...</h1>
+            <h1 style="font-size: 500%;">Click!</h1>
+        </div>
+
+        <div id="FailText">
+            <h1 class="title">whops</h1>
+            <h1>You clicked too early. Click to try again</h1>
+        </div>
+
+        <div id="AfterText">
+            <h1 class="title"><span id="timeTaken">x</span> ms</h1>
+            <h1>Click to keep going (<span id="numTrials">x</span>/3 trials)</h1>
+        </div>
+
+        <div id="EndText">
+            <h1>Your average time was</h1>
+            <h1 class="title"><span id="averageTime">x</span> ms</h1>
+            <h1>Click to continue</h1>
+            
         </div>
     </div>
 
-    <table>
+    <table id="table">
         <tr>
           <th>Trial</th>
           <th>Result</th>
         </tr>
-        <tr>
-          <td>1</td>
-          <td>10ms</td>
+    </table>
+
+    <template id="trTemplate">
+        <tr id="tr">
+            <td class="trialNum">1</td>
+            <td class="trialTime">10ms</td>
         </tr>
-        <tr>
-            <td>2</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>-</td>
-          </tr>
-
-
-      </table>
-
+    </template>
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
-    <script src="../static/redirectCompleted.js"></script>
+    <!-- <script src="../static/redirectCompleted.js"></script> -->
+    <script src="../static/backReload.js"></script>
     <script src="../static/test.js"></script>
 </body>
 

@@ -4,12 +4,22 @@ body{
 }
 
 #sportsOtherText {
-    visibility: hidden;
+    display: none;
 }
 
 #other:checked ~ #sportsOtherText{
-    visibility:visible;
+    display: block;
     
+}
+
+#button{
+    position: absolute;
+    height: 600px;
+    border: none;
+    width: 100%;
+    z-index: 20;
+    background-color: #e9000000;
+    cursor: pointer;
 }
 
 #testBox{
@@ -21,26 +31,27 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-
 }
 
 #text{
+    z-index: 5;
 }
 
-h3{
+h3, h1{
     margin: 0;
     font-size: 150%;
     color: white;
 }
 
-#title{
+.title{
     margin: 0;
     font-size: 500%;
     margin-bottom: 10px;
     color: white;
+    z-index: 2;
 }
-#colorSpan{
-    color: rgb(247, 0, 255);
+.colorSpan{
+    color: rgb(255, 30, 0);
 }
 
 
@@ -62,3 +73,4 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+

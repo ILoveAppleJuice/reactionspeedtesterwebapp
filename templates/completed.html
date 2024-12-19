@@ -11,26 +11,44 @@
 
             h1{
                 text-align: center;
-                margin-top: 200px;
+                margin: 0;
+                margin-top: 250px;
                 font-size: 350%;
             }
 
-            h3{
+            h3,h2{
                 text-align: center;
                 margin: 10px;
                 font-size: 150%;
+            }
+
+            h2{
+                font-size: 250%;
+            }
+
+            h3 {
+                margin-top: 50px;
+            }
+            h1,h3,h2{
+                color:deeppink;
             }
         </style>
     </head>
 
     <body>
         <h1>Thank you for participating!</h1>
-        <h3>Masrur Raheeq and Ethan Wang AP Stats experiment</h3>
+        <h2>Your average time was <span id="averageTime"></span> ms.</h2>
+        <h3>Masrur Raheeq and Ethan Wang AP Stats Experiment 2024</h3>
+        
+        <button onclick="Cookies.remove('result'); Cookies.remove('colorData')">reset cookies</button>
 
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
         <script>
             const jsConfetti = new JSConfetti()
             jsConfetti.addConfetti()
+
+            document.querySelector("#averageTime").textContent = Math.floor(Cookies.get("result")*100)/100
         </script>
     </body>
 </html>

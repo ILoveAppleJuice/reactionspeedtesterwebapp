@@ -1,2 +1,47 @@
-{
-}
+[
+    {
+        "SubjectInfo": {
+            "grade": "10",
+            "gender": "male",
+            "sports": [
+                "swim"
+            ]
+        },
+        "Results": [
+            439,
+            278,
+            84
+        ],
+        "Timestamp": "12/18/2024, 23:35:31"
+    },
+    {
+        "SubjectInfo": {
+            "grade": "11",
+            "gender": "female",
+            "sports": [
+                "soccer"
+            ]
+        },
+        "Results": [
+            127,
+            143,
+            353
+        ],
+        "Timestamp": "12/18/2024, 23:37:07"
+    },
+    {
+        "SubjectInfo": {
+            "grade": "11",
+            "gender": "male",
+            "sports": [
+                "swim"
+            ]
+        },
+        "Results": [
+            217,
+            169,
+            302
+        ],
+        "Timestamp": "12/18/2024, 23:37:34"
+    }
+]
