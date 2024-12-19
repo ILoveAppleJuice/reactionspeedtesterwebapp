@@ -6,14 +6,22 @@
     <title>thing</title>
 
     <link rel="stylesheet" href="../static/styles.css">
+
+    <style>
+        body{
+            padding: 20px;
+        }
+    </style>
     
 </head>
 
 <body>
 
+    <h1 style="color: black; margin-bottom: 40px;">Preliminary Survey</h1>
     <form id="form">
         <div id="gradeInput">
             <h4>Grade</h4>
+            <br>
             <input type="radio" name="grade" value="9" id="9" >
             <label for="9">9th grade</label><br>
 
@@ -31,6 +39,7 @@
         
         <div id="genderInput">
             <h4>Gender</h4>
+            <br>
             <input type="radio" name="gender" value="male" id="male" required>
             <label for="male">Male</label><br>
 
@@ -42,6 +51,7 @@
 
         <div id="Sports">
             <h4>Extracurricular Sports</h4>
+            <br>
             <input type="checkbox" name="soccer"  id="soccer">
             <label for="soccer">Soccer</label><br>
 
@@ -54,14 +64,38 @@
             <input type="checkbox" name="tennis" id="tennis" >
             <label for="tennis">Tennis</label><br>
 
-            <input type="checkbox" name="baseball"  id="baseball" >
+            <input type="checkbox" name="baseball" id="baseball" >
             <label for="baseball">Baseball</label><br>
             
+            <input type="checkbox" name="football" id="football" >
+            <label for="football">Football</label><br>
+
+            <input type="checkbox" name="softball" id="softball" >
+            <label for="softball">Softball</label><br>
             
             <input type="checkbox" id="other" >
             <label for="other">Other</label><br>
             <input type="text" name="sportsOther" id="sportsOtherText" placeholder="Please specify">
             
+        </div>
+
+        <br><hr>
+
+        <div id="Gaming">
+            <h4>Weekly Gaming Hours</h4>
+            <p>About how many hours per week do you spend gaming?</p>
+            <br>
+            <input type="radio" name="gaming" value="0-2" id="0-2" required>
+            <label for="0-2">0-2</label><br>
+
+            <input type="radio" name="gaming" value="2-4" id="2-4" required>
+            <label for="2-4">2-4</label><br>
+            
+            <input type="radio" name="gaming" value="4-6" id="4-6" required>
+            <label for="4-6">4-6</label><br>
+
+            <input type="radio" name="gaming" value="6-8+" id="6-8+" required>
+            <label for="6-8+">6-8+</label><br>
         </div>
 
         <br>

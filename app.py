@@ -43,8 +43,10 @@ def ProcessData(data):
         "SubjectInfo":{
             "grade":data["SubjectInfo"]["grade"],
             "gender":data["SubjectInfo"]["gender"],
+            "gaming":data["SubjectInfo"]["gaming"],
             "sports":[]
         },
+        "Color":data["Color"],
         "Results":data["Results"],
         "Timestamp":datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
     }
@@ -81,7 +83,7 @@ def handleSubmitRequest():
     
     return "200"
 
-@app.route("/api/data",methods=["GET"])
+@app.route("/data",methods=["GET"])
 def handleGetDataRequest():
     return jsonify(data)
 
@@ -89,6 +91,48 @@ def handleGetDataRequest():
 def handleGetColorRequest():
     return jsonify(GetRandomColor())
 
+@app.route("/api/getColors",methods=["GET"]) # (with an "s")
+def handleGetColorsRequest():
+    return jsonify(colorPool)
+
+
+
+@app.route("/stats",methods=["GET"])
+def handleGetStatsRequest():
+    stats = {
+        "Color" : {},
+        "Gender" : {},
+        "Grade": {},
+    }
+
+    for i in range(len(data)):
+        result = data[i]
+        colorName = result["Color"]
+        stats["Color"][colorName] = stats["Color"].get(colorName) or {"Average":0,"Times":[]}
+        stats["Color"][colorName]["Times"].append(result["Results"])
+
+    #bruh
+    for i in range(len(data)):
+        result = data[i]
+        gender = result["SubjectInfo"]["gender"]
+        stats["Gender"][gender] = stats["Gender"].get(gender) or {"Average":0,"Times":[]}
+        stats["Gender"][gender]["Times"].append(result["Results"])
+
+    #bruh
+    for i in range(len(data)):
+        result = data[i]
+        grade = result["SubjectInfo"]["grade"]
+        stats["Grade"][grade] = stats["Grade"].get(grade) or {"Average":0,"Times":[]}
+        stats["Grade"][grade]["Times"].append(result["Results"])
+
+    
+    for _,jit in stats.items():
+        for i,category in jit.items():
+            category["Average"] = sum([sum(t)/len(t) for t in category["Times"]])/len(category["Times"])
+            
+
+
+    return jsonify(stats)
 
 
 if __name__ == "__main__":

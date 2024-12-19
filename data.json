@@ -1,47 +1,21 @@
 [
     {
         "SubjectInfo": {
-            "grade": "10",
+            "grade": "12",
             "gender": "male",
+            "gaming": "2-4",
             "sports": [
-                "swim"
+                "tennis"
             ]
         },
+        "Color": "Blue",
         "Results": [
-            439,
-            278,
-            84
+            204,
+            194,
+            299,
+            216,
+            229
         ],
-        "Timestamp": "12/18/2024, 23:35:31"
-    },
-    {
-        "SubjectInfo": {
-            "grade": "11",
-            "gender": "female",
-            "sports": [
-                "soccer"
-            ]
-        },
-        "Results": [
-            127,
-            143,
-            353
-        ],
-        "Timestamp": "12/18/2024, 23:37:07"
-    },
-    {
-        "SubjectInfo": {
-            "grade": "11",
-            "gender": "male",
-            "sports": [
-                "swim"
-            ]
-        },
-        "Results": [
-            217,
-            169,
-            302
-        ],
-        "Timestamp": "12/18/2024, 23:37:34"
+        "Timestamp": "12/19/2024, 01:07:27"
     }
 ]

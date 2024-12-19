@@ -21,7 +21,7 @@ if (urlParams.get("gender") == undefined || urlParams.get("grade") == undefined)
 }
 
 const results = []
-const numTrials = 3
+const numTrials = 5
 let currTrials = 0
 
 function AddResult(value){
@@ -40,7 +40,7 @@ function DisplayText(name){
 }
 
 function HideColor(){
-    mainDiv.style["background-color"] = "rgb(99, 99, 99)" //what poop
+    mainDiv.style["background-color"] = "rgb(145, 145, 145)" //what poop
 }
 
 function ShowColor(){
@@ -115,6 +115,8 @@ function Submit(){
         paramsObject[key] = value;
     }
 
+    data["Color"] = colorData.ColorName
+
     data["SubjectInfo"] = paramsObject
     data["Results"] = results
 
@@ -165,7 +167,7 @@ function setup(){
                 currStatus = "End"
             }else{
                 document.querySelector("#timeTaken").textContent = timeTaken
-                document.querySelector("#numTrials").textContent = currTrials
+                document.querySelector("#numTrials").textContent = currTrials+"/"+numTrials
                 DisplayText("AfterText")
                 currStatus = "PostPrompt"
             }
