@@ -76,7 +76,7 @@ function Start(){
     DisplayText("DuringText")
     
     let prevAttempt = attempt
-    let randomTime = (Math.random())*4 + 1
+    let randomTime = (Math.random())*4 + 2
     //randomTime = 0
     console.log(randomTime)
     setTimeout(() => {
