@@ -30,7 +30,7 @@ colorPool = [
     },
     {
         "ColorName":"Green",
-        "Hex":"#00ff00"
+        "Hex":"##25eb0d"
     }
 ]
 

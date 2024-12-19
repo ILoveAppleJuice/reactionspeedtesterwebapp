@@ -128,6 +128,48 @@ function Submit(){
     })
 }
 
+function OnInput(){
+    if (currStatus == "PreStart"){
+        Start()
+
+    }else if(currStatus == "PrePrompt"){
+        attempt += 1
+
+        currStatus = "PreStart"
+        HideColor()
+        DisplayText("FailText")
+    }else if(currStatus == "ReadyPrompt"){
+        HideColor()
+        
+        let timeTaken = Date.now()-startTime
+        AddResult(timeTaken)
+        UpdateTableValue(currTrials+1,timeTaken)
+        currTrials += 1;
+        
+        console.log(results)
+        if (currTrials >= numTrials){
+            document.querySelector("#averageTime").textContent = Math.floor(GetAverageTime()*100)/100
+            
+            DisplayText("EndText")
+            currStatus = "End"
+        }else{
+            document.querySelector("#timeTaken").textContent = timeTaken
+            document.querySelector("#numTrials").textContent = currTrials+"/"+numTrials
+            DisplayText("AfterText")
+            currStatus = "PostPrompt"
+        }
+        
+
+    }else if(currStatus == "PostPrompt"){
+        HideColor()
+        Start()
+    }else if(currStatus == "End"){
+        Submit();
+        Cookies.set('result', GetAverageTime())
+        window.location.href = "/completed"
+    }
+}
+
 function setup(){
     
     console.log(colorData);
@@ -142,47 +184,14 @@ function setup(){
 
     
     button.onmousedown = function(){
-        if (currStatus == "PreStart"){
-            Start()
-
-        }else if(currStatus == "PrePrompt"){
-            attempt += 1
-
-            currStatus = "PreStart"
-            HideColor()
-            DisplayText("FailText")
-        }else if(currStatus == "ReadyPrompt"){
-            HideColor()
-            
-            let timeTaken = Date.now()-startTime
-            AddResult(timeTaken)
-            UpdateTableValue(currTrials+1,timeTaken)
-            currTrials += 1;
-            
-            console.log(results)
-            if (currTrials >= numTrials){
-                document.querySelector("#averageTime").textContent = Math.floor(GetAverageTime()*100)/100
-                
-                DisplayText("EndText")
-                currStatus = "End"
-            }else{
-                document.querySelector("#timeTaken").textContent = timeTaken
-                document.querySelector("#numTrials").textContent = currTrials+"/"+numTrials
-                DisplayText("AfterText")
-                currStatus = "PostPrompt"
-            }
-            
-
-        }else if(currStatus == "PostPrompt"){
-            HideColor()
-            Start()
-        }else if(currStatus == "End"){
-            Submit();
-            Cookies.set('result', GetAverageTime())
-            window.location.href = "/completed"
-        }
+        OnInput()
     }
 }
+addEventListener("keydown",function(event){
+    if (event.key == " "){
+        OnInput()
+    }
+})
 
 
 let colorJson = Cookies.get("colorData")
